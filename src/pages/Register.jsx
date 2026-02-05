@@ -1,8 +1,8 @@
 const Register = () => {
   return (
-    <div>
-
-    </div>
+    <section className="h-screen grid place-items-center">
+      <h2>Register</h2>
+    </section>
   )
 }
 
