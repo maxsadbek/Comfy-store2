@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
+import { FomrInput, SumbitBtn } from "../components";
 
 const Login = () => {
   return (
@@ -23,12 +24,12 @@ const Login = () => {
           name={"indentier"}
           defaultValue={"test@gmail.com"}
         />
-        <Link to={"/"}>
-          <SumbitBtn text={"Register"} />
+        <Link to={"/"} className="w-[300px]">
+          <SumbitBtn text={"Login"} />
         </Link>
         <p className="text-center mt-4">
           Already a member?
-          <Link to={"register"}>Register</Link>
+          <Link to={"/register"}> Register</Link>
         </p>
       </Form>
     </section>
