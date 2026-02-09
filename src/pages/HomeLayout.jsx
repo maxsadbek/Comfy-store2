@@ -1,7 +1,9 @@
+import Navbar from "../components/Navbar"
+
 const HomeLayout = () => {
   return (
     <div className='flex items-center justify-center'>
-      Home Layout
+      <Navbar />
     </div>
   )
 }
