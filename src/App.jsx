@@ -15,6 +15,7 @@ import {
 } from "./pages";
 
 import { ErrorElement } from "./components";
+import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
