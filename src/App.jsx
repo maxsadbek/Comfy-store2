@@ -14,11 +14,13 @@ import {
   SingleProduct,
 } from "./pages";
 
+import { ErrorElement } from "./components";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
-    errorElement: <Error />,
+    errorElement: <errorElement />,
     children: [
       {
         index: true,
@@ -27,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
-        errorElement: <Error />,
+        errorElement: <errorElement />,
       },
       {
         path: "products/:id",
         element: <SingleProduct />,
-        errorElement: <Error />,
+        errorElement: <ErrorElement />,
       },
       {
         path: "cart",
