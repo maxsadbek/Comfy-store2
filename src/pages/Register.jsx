@@ -30,7 +30,9 @@ const Register = () => {
           name={"indentier"}
           defaultValue={"test@gmail.com"}
         />
-        <SumbitBtn text={"Register"} />
+        <Link to={"/"}>
+          <SumbitBtn text={"Register"} />
+        </Link>
         <p className="text-center mt-4">
           Already a member?
           <Link to={"/login"}> login</Link>

@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
 const HomeLayout = () => {
   return (
     <div className='flex items-center justify-center'>
-      <Navbar />
+      <Header />
     </div>
   )
 }
