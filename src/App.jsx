@@ -16,6 +16,7 @@ import {
 
 import { ErrorElement } from "./components";
 import Navbar from "./components/Navbar";
+import {loader as langdingLoader} from "./pages/Landing"
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        loader: langdingLoader
       },
       {
         path: "products",
