@@ -7,7 +7,7 @@ const HomeLayout = () => {
     <>
     <Header />
       <Navbar />
-      <main className="aline-element py-10">
+      <main className="aline-element py-10 px-10">
         <Outlet />
       </main>
     </>

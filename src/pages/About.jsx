@@ -13,7 +13,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <p className="mt-6 text-md leading-8 max-w-2xl mx-auto px-10 text-start lg:text-lg lg:px-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum culpa autem, deserunt nihil reiciendis quia eligendi amet. Aut maiores quia possimus, odit quam nostrum, quaerat, laborum aspernatur ad esse asperiores!</p>
+      <p className="mt-6 text-md leading-8 max-w-2xl mx-auto text-start lg:text-lg lg:px-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum culpa autem, deserunt nihil reiciendis quia eligendi amet. Aut maiores quia possimus, odit quam nostrum, quaerat, laborum aspernatur ad esse asperiores!</p>
     </>
   );
 };
