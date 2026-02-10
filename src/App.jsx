@@ -17,6 +17,7 @@ import {
 import { ErrorElement } from "./components";
 import Navbar from "./components/Navbar";
 import {loader as langdingLoader} from "./pages/Landing"
+import { loader as singleLoader } from "./pages/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
         path: "products/:id",
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
+        loader: singleLoader
       },
       {
         path: "cart",
