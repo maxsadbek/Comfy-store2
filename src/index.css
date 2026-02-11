@@ -2,9 +2,9 @@
 @plugin "daisyui";
 
 @plugin "daisyui" {
-    themes: light, night;
+    themes: winter, night;
 }
 
 .align-element{
-    @apply max-w-[1200px] mx-auto 
+    @apply max-w-[1200px] mx-auto
 }

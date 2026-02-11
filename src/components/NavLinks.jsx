@@ -12,19 +12,23 @@ const links = [
 const NavLinks = () => {
   return (
     <>
-      {
-        links.map((links) =>{
-          const {id, url, text} = links
-          return <li key={id}>
-            <NavLink to={url} className='capitalize'>
-                {text}
+      {links.map((links) => {
+        const { id, url, text } = links;
+        return (
+          <li key={id}>
+            <NavLink
+              to={url}
+              className={({ isActive }) =>
+                isActive ? "bg-primary capitalize" : "capitalize"
+              }
+            >
+              {text}
             </NavLink>
           </li>
-        })
-      }
+        );
+      })}
     </>
-  )
-}
+  );
+};
 
-export default NavLinks
-
+export default NavLinks;
