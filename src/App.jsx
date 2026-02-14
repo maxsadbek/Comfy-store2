@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import {
   About,
@@ -16,8 +16,9 @@ import {
 
 import { ErrorElement } from "./components";
 import Navbar from "./components/Navbar";
-import {loader as langdingLoader} from "./pages/Landing"
+import { loader as landingLoader } from "./pages/Landing";
 import { loader as singleLoader } from "./pages/SingleProduct";
+import { loader as productLoader } from "./pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -28,18 +29,19 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
-        loader: langdingLoader
+        loader: landingLoader,
       },
       {
         path: "products",
         element: <Products />,
         errorElement: <ErrorElement />,
+        loader: productLoader,
       },
       {
         path: "products/:id",
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
-        loader: singleLoader
+        loader: singleLoader,
       },
       {
         path: "cart",
@@ -72,10 +74,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return (
-      <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
-
 
 export default App;

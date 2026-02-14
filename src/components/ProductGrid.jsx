@@ -2,14 +2,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import { formatPrice } from "../utils";
 
 const ProductGrid = () => {
-  const products = useLoaderData();
+  const { products } = useLoaderData();
 
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 align-element">
       {products.map((items) => {
         const { id } = items;
         const { image, title, price } = items.attributes;
-        const fomatedPrice = formatPrice(price)
+        const fomatedPrice = formatPrice(price);
 
         return (
           <Link
