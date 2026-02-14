@@ -10,7 +10,7 @@ export const loader = async ({ request }) => {
 };
 const Products = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="align-element">
       <Filter />
       <ProductContainer />
       <Pogination />
