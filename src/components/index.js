@@ -1,5 +1,5 @@
 export {default as SumbitBtn} from "./Sumbit"
-export { default as FomrInput } from "./FomrInput"
+export { default as FomrInput } from "./FormInput"
 export {default as Hero} from "./Hero"
 export { default as SectionTitle } from "./SectionTitle"
 export { default as FeatureProducts } from "./FeturedProduct"

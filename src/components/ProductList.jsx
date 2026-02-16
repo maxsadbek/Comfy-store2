@@ -14,7 +14,7 @@ const ProductList = () => {
           <Link
             to={`/products/${product.id}`}
             key={product.id}
-            className=" p-8 rounded-lg flex flex-col sm:flex-row gap-y-8 flex-wrap bg-base-100 hover:shadow-2xl duration-200 group shadow-xl "
+            className=" p-8 rounded-lg flex flex-col sm:flex-row gap-y-8 flex-wrap bg-base-100 hover:shadow-2xl duration-200 group shadow-xl"
           >
             <img
               src={image}
