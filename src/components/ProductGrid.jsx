@@ -4,12 +4,16 @@ import { formatPrice } from "../utils";
 const ProductGrid = () => {
   const { products } = useLoaderData();
 
+  if (!products) {
+    return <div className="pt-12 text-center">Loading products...</div>;
+  }
+
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 align-element">
-      {products.map((items) => {
-        const { id } = items;
-        const { image, title, price } = items.attributes;
-        const fomatedPrice = formatPrice(price);
+      {products.map((item) => {
+        const { id } = item;
+        const { image, title, price } = item.attributes;
+        const formattedPrice = formatPrice(price);
 
         return (
           <Link
@@ -24,10 +28,9 @@ const ProductGrid = () => {
                 className="rounded-xl h-64 md:h-58 w-full object-cover"
               />
             </figure>
-
             <div className="card-body items-center text-center">
               <h2 className="card-title capitalize tracking-wider">{title}</h2>
-              <span className="text-secondary">{fomatedPrice}</span>
+              <span className="text-secondary">{formattedPrice}</span>
             </div>
           </Link>
         );
