@@ -1,7 +1,7 @@
 
 const FormCheckBox = ({label, name, defaultValue, size}) => {
   return (
-    <div className="form-control flex flex-row lg:flex-col justify-between lg:justify-center items-center">
+    <div className="-mt-3 gap-2 form-control flex flex-row lg:flex-col justify-between lg:justify-center items-center">
       <label htmlFor={name} className="label cursor-pointer">
         <span className="label-text capitalize">{label}</span>
       </label>

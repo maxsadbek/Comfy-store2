@@ -7,3 +7,6 @@ export { default as ErrorElement } from "./ErrorElement"
 export { default as ProductContainer } from "./ProductContainer"
 export { default as Filter } from "./Filter"
 export { default as Pogination } from "./PoginationContainer"
+export { default as Loading } from "./Loading";
+export { default as Navbar } from "./Navbar";
+export { default as Header } from "./Header";
