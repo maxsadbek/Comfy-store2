@@ -1,15 +1,13 @@
-import { useLoaderData, Link } from "react-router";
+import { useLoaderData, Link } from "react-router-dom";
 import { formatPrice, customFetch, generateAmountOptions } from "../utils";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../features/cart/cartSlice";
 
-const singleProductQuery = (id) => {
-  return {
-    queryKey: ["singleProduct", id],
-    queryFn: () => customFetch(`/products/${id}`),
-  };
-};
+const singleProductQuery = (id) => ({
+  queryKey: ["singleProduct", id],
+  queryFn: () => customFetch(`/products/${id}`),
+});
 
 export const loader =
   (queryClient) =>
@@ -17,24 +15,27 @@ export const loader =
     const response = await queryClient.ensureQueryData(
       singleProductQuery(params.id),
     );
-
+    console.log(response.data.data);
     return { product: response.data.data };
+
   };
 
 const SingleProduct = () => {
   const { product } = useLoaderData();
+  console.log("useLoaderData dan keldi →");
   const { image, title, price, description, colors, company } =
     product.attributes;
   const dollars = formatPrice(price);
+
   const [productColor, setProductColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
-  console.log(product);
 
   const handleAmount = (e) => {
-    setAmount(parseInt(e.target.value));
+    setAmount(parseInt(e.target.value) || 1);
   };
+
   const cartProduct = {
-    cartID: product.id + productColor,
+    cartID: `${product.id}-${productColor}`,
     productID: product.id,
     image,
     title,
@@ -43,83 +44,74 @@ const SingleProduct = () => {
     productColor,
     amount,
   };
+
   const dispatch = useDispatch();
 
   const addToCart = () => {
     dispatch(addItem({ product: cartProduct }));
   };
+
   return (
-    <section>
+    <section className="align-element my-12">
       <div className="text-md breadcrumbs">
         <ul>
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to={"/products"}>Products</Link>
+            <Link to="/products">Products</Link>
           </li>
         </ul>
       </div>
 
-      {/* PRODUCT */}
       <div className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
-        {/* IMAGE */}
         <img
           src={image}
           alt={title}
-          className="w-96 h-96 object-cover rounded-lg lg:w-full"
+          className="w-full h-96 object-cover rounded-lg lg:w-full"
         />
-        {/* PRODUCT */}
+
         <div>
           <h1 className="capitalize text-3xl font-bold">{title}</h1>
           <h3 className="text-xl text-neutral-content font-bold mt-2">
             {company}
           </h3>
-          <p className="mt-3 text-xl">{dollars}</p>
+          <p className="mt-3 text-2xl font-medium">{dollars}</p>
           <p className="mt-6 leading-8">{description}</p>
-          {/* COLORS */}
+
           <div className="mt-6">
             <h4 className="text-md font-medium tracking-wider capitalize">
-              colors
+              Colors
             </h4>
-            <div className="mt-2">
-              {colors.map((color) => {
-                return (
-                  <button
-                    key={color}
-                    type="button"
-                    className={`badge w-6 h-6 mr-2 ${color === productColor && "border-2 border-secondary"} cursor-pointer`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => setProductColor(color)}
-                  >
-                    {" "}
-                  </button>
-                );
-              })}
+            <div className="flex gap-3 mt-2">
+              {colors.map((color) => (
+                <button
+                  key={color}
+                  type="button"
+                  className={`badge w-8 h-8 rounded-full cursor-pointer border-2
+                    ${color === productColor ? "border-secondary ring-2 ring-secondary/50" : "border-transparent"}`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => setProductColor(color)}
+                />
+              ))}
             </div>
           </div>
-          {/* AMOUNT */}
-          <div className="form-control w-full max-w-xs mt-2">
-            <label className="label" htmlFor="amount">
-              <h4 className="text-md font-medium tracking-wider capitalize">
-                amount
-              </h4>
+
+          <div className="form-control w-full max-w-xs mt-6">
+            <label className="label">
+              <span className="label-text font-medium">Amount</span>
             </label>
             <select
-              className=" select select-secondary select-bordered select-md mt-2"
+              className="select select-secondary select-bordered w-full"
               value={amount}
               onChange={handleAmount}
-              id="amount"
             >
               {generateAmountOptions(20)}
             </select>
           </div>
-          {/* CART BTN */}
+
           <div className="mt-10">
-            <button
-              className="btn btn-secondary btn-md"
-              onClick={() => addToCart()}
-            >
+            <button className="btn btn-secondary btn-lg" onClick={addToCart}>
               Add to bag
             </button>
           </div>

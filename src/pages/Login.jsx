@@ -1,5 +1,5 @@
 import { Form, Link } from "react-router-dom";
-import { FomrInput, SumbitBtn } from "../components";
+import { FormInput, SubmitBtn } from "../components";
 
 const Login = () => {
   return (
@@ -11,21 +11,21 @@ const Login = () => {
         <div className="items-center justify-center flex text-2xl font-semibold">
           <h2 className="mb-3">Log In</h2>
         </div>
-        <FomrInput
+        <FormInput
           type={"email"}
           label={"email"}
           name={"indentier"}
           defaultValue={"test@gmail.com"}
         />
         <br />
-        <FomrInput
+        <FormInput
           type={"password"}
           label={"password"}
           name={"indentier"}
           defaultValue={"test@gmail.com"}
         />
         <Link to={"/"} className="w-[300px]">
-          <SumbitBtn text={"Login"} />
+          <SubmitBtn text={"Login"} />
         </Link>
         <p className="text-center mt-4">
           Already a member?

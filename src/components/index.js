@@ -1,12 +1,15 @@
-export {default as SumbitBtn} from "./Sumbit"
-export { default as FomrInput } from "./FormInput"
-export {default as Hero} from "./Hero"
-export { default as SectionTitle } from "./SectionTitle"
-export { default as FeatureProducts } from "./FeturedProduct"
-export { default as ErrorElement } from "./ErrorElement"
-export { default as ProductContainer } from "./ProductContainer"
-export { default as Filter } from "./Filter"
-export { default as Pogination } from "./PoginationContainer"
+export { default as SubmitBtn } from "./Sumbit";
+export { default as FormInput } from "./FormInput";
+export { default as Hero } from "./Hero";
+export { default as SectionTitle } from "./SectionTitle";
+export { default as FeaturedProducts } from "./FeturedProduct";
+export { default as ErrorElement } from "./ErrorElement";
+export { default as ProductContainer } from "./ProductContainer";
+export { default as Filters } from "./Filter";
+export { default as PaginationContainer } from "./PoginationContainer";
 export { default as Loading } from "./Loading";
 export { default as Navbar } from "./Navbar";
 export { default as Header } from "./Header";
+export { default as ComplexPaginationContainer } from "./ComplexPaginationContainer";
+export { default as CartTotals } from "./CartTotals";
+export { default as CartItemsList } from "./CartItemList";

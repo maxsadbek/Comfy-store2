@@ -1,4 +1,4 @@
-import { FeatureProducts, Hero } from "../components";
+import { FeaturedProducts, Hero } from "../components";
 import ProductGrid from "../components/ProductGrid";
 import { customFetch } from "../utils";
 
@@ -17,7 +17,7 @@ const Landing = () => {
       {" "}
       {/* Klass nomi to'g'rilandi */}
       <Hero />
-      <FeatureProducts />
+      <FeaturedProducts />
       <ProductGrid />
     </div>
   );

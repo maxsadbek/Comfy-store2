@@ -1,4 +1,4 @@
-import { Filter, Pogination, ProductContainer } from "../components";
+import { Filters, PaginationContainer, ProductContainer } from "../components";
 import { customFetch } from "../utils";
 const url = "/products";
 
@@ -18,9 +18,9 @@ export const loader = async ({ request }) => {
 const Products = () => {
   return (
     <div className="align-element">
-      <Filter />
+      <Filters />
       <ProductContainer />
-      <Pogination />
+      <PaginationContainer />
     </div>
   );
 };
